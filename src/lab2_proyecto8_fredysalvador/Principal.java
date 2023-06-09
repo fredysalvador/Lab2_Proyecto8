@@ -96,10 +96,12 @@ public class Principal extends javax.swing.JFrame {
         verusuario = new javax.swing.JButton();
         agregarusuarioscliente = new javax.swing.JButton();
         agregarusuariosartistas = new javax.swing.JButton();
+        eventoing = new javax.swing.JButton();
+        Gen_Simulacion = new javax.swing.JButton();
         salirusuario = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
-        jButton5.setText("Registrar Artista");
+        jButton5.setText("Registrar Solistas");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
@@ -126,7 +128,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Menu de Inicio");
 
-        jButton7.setText("Registrar Cliente");
+        jButton7.setText("Registrar Bandas");
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton7MouseClicked(evt);
@@ -565,6 +567,30 @@ public class Principal extends javax.swing.JFrame {
         agregarusuariosartistas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(agregarusuariosartistas);
 
+        eventoing.setText("Agregar Evento");
+        eventoing.setEnabled(false);
+        eventoing.setFocusable(false);
+        eventoing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        eventoing.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        eventoing.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eventoingMouseClicked(evt);
+            }
+        });
+        jToolBar1.add(eventoing);
+
+        Gen_Simulacion.setText("Generar Simulacion");
+        Gen_Simulacion.setEnabled(false);
+        Gen_Simulacion.setFocusable(false);
+        Gen_Simulacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Gen_Simulacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Gen_Simulacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Gen_SimulacionMouseClicked(evt);
+            }
+        });
+        jToolBar1.add(Gen_Simulacion);
+
         salirusuario.setText("Salir del Sistema");
         salirusuario.setEnabled(false);
         salirusuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -848,6 +874,14 @@ abrir_ingresar();
         
     }//GEN-LAST:event_salirusuarioMouseClicked
 
+    private void eventoingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventoingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eventoingMouseClicked
+
+    private void Gen_SimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Gen_SimulacionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Gen_SimulacionMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -889,6 +923,7 @@ abrir_ingresar();
     ArrayList<Usuario> usuarios = new ArrayList();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Gen_Simulacion;
     private javax.swing.JTextArea ListaMusical1;
     private javax.swing.JTextArea ListaMusical2;
     private javax.swing.JTable TablaUsers;
@@ -898,6 +933,7 @@ abrir_ingresar();
     private javax.swing.JButton btAgregarCliente;
     private javax.swing.JButton btIngresar;
     private javax.swing.JButton bteliminarusuario;
+    private javax.swing.JButton eventoing;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
