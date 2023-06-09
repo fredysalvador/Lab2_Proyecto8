@@ -14,13 +14,12 @@ import java.util.List;
 public class Solistas extends Usuario{
 private String Nombre;
 private String Genero_Musical;
-private List<String> ListaCancion;
+private ArrayList<Cancion> Cancion=new ArrayList();
 
-    public Solistas(String Nombre, String Genero_Musical, List<String> ListaCancion, String username, String password, int edad) {
+    public Solistas(String Nombre, String Genero_Musical, String username, String password, int edad) {
         super(username, password, edad);
         this.Nombre = Nombre;
         this.Genero_Musical = Genero_Musical;
-        this.ListaCancion = ListaCancion;
     }
 
     public String getNombre() {
@@ -39,12 +38,12 @@ private List<String> ListaCancion;
         this.Genero_Musical = Genero_Musical;
     }
 
-    public List<String> getListaCancion() {
-        return ListaCancion;
+    public ArrayList<Cancion> getCancion() {
+        return Cancion;
     }
 
-    public void setListaCancion(List<String> ListaCancion) {
-        this.ListaCancion = ListaCancion;
+    public void setCancion(ArrayList<Cancion> cancion) {
+        this.Cancion = cancion;
     }
     
     

@@ -57,9 +57,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         tgenmusical1 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ListaMusical1 = new javax.swing.JTextArea();
         jd_AgregarBanda = new javax.swing.JDialog();
         tnomuser2 = new javax.swing.JTextField();
         tcontrasena2 = new javax.swing.JTextField();
@@ -195,12 +192,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel15.setText("Genero Musical:");
 
-        jLabel16.setText("Lista Musical:");
-
-        ListaMusical1.setColumns(20);
-        ListaMusical1.setRows(5);
-        jScrollPane2.setViewportView(ListaMusical1);
-
         javax.swing.GroupLayout jd_AgregarSolistaLayout = new javax.swing.GroupLayout(jd_AgregarSolista.getContentPane());
         jd_AgregarSolista.getContentPane().setLayout(jd_AgregarSolistaLayout);
         jd_AgregarSolistaLayout.setHorizontalGroup(
@@ -211,31 +202,28 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(jd_AgregarSolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jd_AgregarSolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tnomuser, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tedadartista, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_AgregarSolistaLayout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tnomartistico, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_AgregarSolistaLayout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(tcontrasenaartista, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
-                                    .addComponent(jLabel15)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tgenmusical1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel16))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_AgregarSolistaLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tnomuser, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_AgregarSolistaLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tedadartista, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tnomartistico, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(tcontrasenaartista, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jd_AgregarSolistaLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tgenmusical1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jd_AgregarSolistaLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
+                        .addGap(121, 121, 121)
                         .addComponent(btAgregarArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
@@ -264,13 +252,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_AgregarSolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(tgenmusical1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btAgregarArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         btAgregarCliente.setText("Agregar");
@@ -553,14 +537,14 @@ public class Principal extends javax.swing.JFrame {
         });
         jToolBar1.add(verusuario);
 
-        agregarusuarioscliente.setText("Agregar Cliente");
+        agregarusuarioscliente.setText("Agregar Solista");
         agregarusuarioscliente.setEnabled(false);
         agregarusuarioscliente.setFocusable(false);
         agregarusuarioscliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         agregarusuarioscliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(agregarusuarioscliente);
 
-        agregarusuariosartistas.setText("Agregar Artista");
+        agregarusuariosartistas.setText("Agregar Banda");
         agregarusuariosartistas.setEnabled(false);
         agregarusuariosartistas.setFocusable(false);
         agregarusuariosartistas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -632,18 +616,16 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-abrir_ingresar();
+     abrir_ingresar();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        
-                jd_AgregarSolista.pack();
-    jd_AgregarSolista.setLocationRelativeTo(this);
-    jd_AgregarSolista.setModal(true);
+     jd_AgregarSolista.pack();
+     jd_AgregarSolista.setLocationRelativeTo(this);
+     jd_AgregarSolista.setModal(true);
      jd_AgregarSolista.setVisible(true);
-
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -652,7 +634,7 @@ abrir_ingresar();
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-          jd_AgregarBanda.pack();
+    jd_AgregarBanda.pack();
     jd_AgregarBanda.setLocationRelativeTo(this);
     jd_AgregarBanda.setModal(true);
     jd_AgregarBanda.setVisible(true);
@@ -667,20 +649,38 @@ abrir_ingresar();
 
     private void btAgregarArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarArtistaMouseClicked
         // TODO add your handling code here:
-           String nombre, contrasena, nom_art, gen_musc, lis_musc;
+           String nombre, contrasena, nom_art, gen_musc;
            int edad;
         try {     
             nombre = tnomuser.getText();
             contrasena = tcontrasenaartista.getText();
             nom_art = tnomartistico.getText();
             gen_musc = tgenmusical1.getText();
-            lis_musc = ListaMusical1.getText();
-            List<String> listaMusical = Arrays.asList(lis_musc.split(","));
+          //  lis_musc = ListaMusical1.getText();
+          //  List<String> listaMusical = Arrays.asList(lis_musc.split(","));
             edad = Integer.parseInt(tedadartista.getText());
  
-            Solistas s = new Solistas(nom_art, gen_musc, listaMusical, nombre, contrasena, edad);
+            Solistas s = new Solistas(nom_art, gen_musc, nombre, contrasena, edad);
             
             usuarios.add(s);
+            
+            
+             String op = "s";
+             int cant = 1;
+             while (op.equals("s")) {
+             s.getCancion().add(
+                    new Cancion(
+                            JOptionPane.showInputDialog("Nombre de la Cancion"),
+                            Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")),nom_art )
+            );
+            cant++;
+            op = JOptionPane.showInputDialog(
+                    "Desea continuar s/n");
+        }
+        adminSolista ap = new adminSolista("./solista.cbm");
+        ap.cargarArchivo();
+        ap.setSolista(s);
+        ap.escribirArchivo();
             
             JOptionPane.showMessageDialog(this,
                  "Valores Ingresado Correctamente");
@@ -924,7 +924,6 @@ abrir_ingresar();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Gen_Simulacion;
-    private javax.swing.JTextArea ListaMusical1;
     private javax.swing.JTextArea ListaMusical2;
     private javax.swing.JTable TablaUsers;
     private javax.swing.JButton agregarusuariosartistas;
@@ -945,7 +944,6 @@ abrir_ingresar();
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -961,7 +959,6 @@ abrir_ingresar();
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDialog jd_AgregarBanda;
