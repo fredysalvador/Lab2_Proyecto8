@@ -14,14 +14,13 @@ public class Bandas extends Usuario{
     
 private String Nombre;
 private String Genero_Musical;
-private List<String> ListaCancion;
+private ArrayList<Cancion> Cancion=new ArrayList();
 private int numero_integrantes;
 
-    public Bandas(String Nombre, String Genero_Musical, List<String> ListaCancion, int numero_integrantes, String username, String password, int edad) {
+    public Bandas(String Nombre, String Genero_Musical, int numero_integrantes, String username, String password, int edad) {
         super(username, password, edad);
         this.Nombre = Nombre;
         this.Genero_Musical = Genero_Musical;
-        this.ListaCancion = ListaCancion;
         this.numero_integrantes = numero_integrantes;
     }
 
@@ -40,14 +39,17 @@ private int numero_integrantes;
     public void setGenero_Musical(String Genero_Musical) {
         this.Genero_Musical = Genero_Musical;
     }
-
-    public List<String> getListaCancion() {
-        return ListaCancion;
+    
+    
+    public ArrayList<Cancion> getCancion() {
+        return Cancion;
     }
 
-    public void setListaCancion(List<String> ListaCancion) {
-        this.ListaCancion = ListaCancion;
+    public void setCancion(ArrayList<Cancion> cancion) {
+        this.Cancion = cancion;
     }
+
+    
 
     public int getNumero_integrantes() {
         return numero_integrantes;

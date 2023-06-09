@@ -68,9 +68,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         tnumerointegrante1 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ListaMusical2 = new javax.swing.JTextArea();
         tgenmusical2 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         tnomBanda1 = new javax.swing.JTextField();
@@ -275,12 +272,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel17.setText("Numero Integrantes:");
 
-        jLabel18.setText("Lista Musical:");
-
-        ListaMusical2.setColumns(20);
-        ListaMusical2.setRows(5);
-        jScrollPane3.setViewportView(ListaMusical2);
-
         jLabel19.setText("Genero Musical:");
 
         jLabel20.setText("Nombre Banda:");
@@ -291,9 +282,6 @@ public class Principal extends javax.swing.JFrame {
             jd_AgregarBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
                 .addGroup(jd_AgregarBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(btAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jd_AgregarBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -315,11 +303,6 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jLabel17)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(tnumerointegrante1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
-                                    .addGap(23, 23, 23)
-                                    .addGroup(jd_AgregarBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel18)))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_AgregarBandaLayout.createSequentialGroup()
                                     .addComponent(jLabel19)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -327,7 +310,10 @@ public class Principal extends javax.swing.JFrame {
                                 .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
                                     .addComponent(jLabel20)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tnomBanda1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(tnomBanda1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jd_AgregarBandaLayout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(btAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         jd_AgregarBandaLayout.setVerticalGroup(
@@ -359,13 +345,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jd_AgregarBandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(tnumerointegrante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btAgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jLabel6.setText("jLabel6");
@@ -688,8 +670,9 @@ public class Principal extends javax.swing.JFrame {
             tcontrasenaartista.setText("");
             tedadartista.setText("");
             tnomartistico.setText("");
+            tgenmusical1.setText("");
             
-                                jd_AgregarSolista.setVisible(false);
+            jd_AgregarSolista.setVisible(false);
             
         } catch (Exception e) {
             e.printStackTrace();
@@ -707,21 +690,39 @@ public class Principal extends javax.swing.JFrame {
             nombre = tnomuser2.getText();
             contrasena = tcontrasena2.getText();
             gen_musc = tgenmusical2.getText();
-            lis_musc = ListaMusical2.getText();
-            List<String> listaMusical = Arrays.asList(lis_musc.split(","));
             edad = Integer.parseInt(tedadcliente.getText());
             banda = tnomBanda1.getText();
             integrantes = Integer.parseInt(tnumerointegrante1.getText());
  
-            Bandas p = new Bandas(banda, gen_musc, listaMusical, integrantes, nombre, contrasena, edad);
+            Bandas s = new Bandas(banda, gen_musc, integrantes, nombre, contrasena, edad);
             
-            usuarios.add(p);
+            usuarios.add(s);
+            
+           String op = "s";
+             int cant = 1;
+             while (op.equals("s")) {
+             s.getCancion().add(
+                    new Cancion(
+                            JOptionPane.showInputDialog("Nombre de la Cancion"),
+                            Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")),banda )
+            );
+            cant++;
+            op = JOptionPane.showInputDialog(
+                    "Desea continuar s/n");
+        }
+        adminBanda ap = new adminBanda("./banda.cbm");
+        ap.cargarArchivo();
+        ap.setBanda(s);
+        ap.escribirArchivo();
             
             JOptionPane.showMessageDialog(this,
                  "Valores Ingresado Correctamente");
             tnomuser2.setText("");
             tcontrasena2.setText("");
             tedadcliente.setText("");
+            tgenmusical2.setText("");
+            tnomBanda1.setText("");
+            tnumerointegrante1.setText("");
             
              jd_AgregarBanda.setVisible(false);
             
@@ -924,7 +925,6 @@ public class Principal extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Gen_Simulacion;
-    private javax.swing.JTextArea ListaMusical2;
     private javax.swing.JTable TablaUsers;
     private javax.swing.JButton agregarusuariosartistas;
     private javax.swing.JButton agregarusuarioscliente;
@@ -945,7 +945,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -959,7 +958,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDialog jd_AgregarBanda;
     private javax.swing.JDialog jd_AgregarSolista;
