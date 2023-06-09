@@ -24,12 +24,14 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
- private void abrir_ingresar(){
-    jd_Ingresar.pack();
-    jd_Ingresar.setLocationRelativeTo(this);
-    jd_Ingresar.setModal(true);
-    jd_Ingresar.setVisible(true);
+
+    private void abrir_ingresar() {
+        jd_Ingresar.pack();
+        jd_Ingresar.setLocationRelativeTo(this);
+        jd_Ingresar.setModal(true);
+        jd_Ingresar.setVisible(true);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -557,7 +559,7 @@ public class Principal extends javax.swing.JFrame {
         });
         jToolBar1.add(Gen_Simulacion);
 
-        salirusuario.setText("Salir del Sistema");
+        salirusuario.setText("Cerrar Sesion");
         salirusuario.setEnabled(false);
         salirusuario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         salirusuario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -598,138 +600,137 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-     abrir_ingresar();
+        abrir_ingresar();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-     jd_AgregarSolista.pack();
-     jd_AgregarSolista.setLocationRelativeTo(this);
-     jd_AgregarSolista.setModal(true);
-     jd_AgregarSolista.setVisible(true);
+        jd_AgregarSolista.pack();
+        jd_AgregarSolista.setLocationRelativeTo(this);
+        jd_AgregarSolista.setModal(true);
+        jd_AgregarSolista.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-    jd_AgregarBanda.pack();
-    jd_AgregarBanda.setLocationRelativeTo(this);
-    jd_AgregarBanda.setModal(true);
-    jd_AgregarBanda.setVisible(true);
-         
+        jd_AgregarBanda.pack();
+        jd_AgregarBanda.setLocationRelativeTo(this);
+        jd_AgregarBanda.setModal(true);
+        jd_AgregarBanda.setVisible(true);
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
-         
-    
+
+
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void btAgregarArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarArtistaMouseClicked
         // TODO add your handling code here:
-           String nombre, contrasena, nom_art, gen_musc;
-           int edad;
-        try {     
+        String nombre, contrasena, nom_art, gen_musc;
+        int edad;
+        try {
             nombre = tnomuser.getText();
             contrasena = tcontrasenaartista.getText();
             nom_art = tnomartistico.getText();
             gen_musc = tgenmusical1.getText();
-          //  lis_musc = ListaMusical1.getText();
-          //  List<String> listaMusical = Arrays.asList(lis_musc.split(","));
+            //  lis_musc = ListaMusical1.getText();
+            //  List<String> listaMusical = Arrays.asList(lis_musc.split(","));
             edad = Integer.parseInt(tedadartista.getText());
- 
+
             Solistas s = new Solistas(nom_art, gen_musc, nombre, contrasena, edad);
-            
+
             usuarios.add(s);
-            
-            
-             String op = "s";
-             int cant = 1;
-             while (op.equals("s")) {
-             s.getCancion().add(
-                    new Cancion(
-                            JOptionPane.showInputDialog("Nombre de la Cancion"),
-                            Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")),nom_art )
-            );
-            cant++;
-            op = JOptionPane.showInputDialog(
-                    "Desea continuar s/n");
-        }
-        adminSolista ap = new adminSolista("./solista.cbm");
-        ap.cargarArchivo();
-        ap.setSolista(s);
-        ap.escribirArchivo();
-            
+
+            String op = "s";
+            int cant = 1;
+            while (op.equals("s")) {
+                s.getCancion().add(
+                        new Cancion(
+                                JOptionPane.showInputDialog("Nombre de la Cancion"),
+                                Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")), nom_art)
+                );
+                cant++;
+                op = JOptionPane.showInputDialog(
+                        "Desea continuar s/n");
+            }
+            adminSolista ap = new adminSolista("./solista.cbm");
+            ap.cargarArchivo();
+            ap.setSolista(s);
+            ap.escribirArchivo();
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
+                    "Valores Ingresado Correctamente");
             tnomuser.setText("");
             tcontrasenaartista.setText("");
             tedadartista.setText("");
             tnomartistico.setText("");
             tgenmusical1.setText("");
-            
+
             jd_AgregarSolista.setVisible(false);
-            
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
 
     }//GEN-LAST:event_btAgregarArtistaMouseClicked
 
     private void btAgregarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btAgregarClienteMouseClicked
         // TODO add your handling code here:
-                  String nombre, contrasena, nom_art, gen_musc, lis_musc,banda;
-           int edad, integrantes;
-        try {     
+        String nombre, contrasena, nom_art, gen_musc, lis_musc, banda;
+        int edad, integrantes;
+        try {
             nombre = tnomuser2.getText();
             contrasena = tcontrasena2.getText();
             gen_musc = tgenmusical2.getText();
             edad = Integer.parseInt(tedadcliente.getText());
             banda = tnomBanda1.getText();
             integrantes = Integer.parseInt(tnumerointegrante1.getText());
- 
+
             Bandas s = new Bandas(banda, gen_musc, integrantes, nombre, contrasena, edad);
-            
+
             usuarios.add(s);
-            
-           String op = "s";
-             int cant = 1;
-             while (op.equals("s")) {
-             s.getCancion().add(
-                    new Cancion(
-                            JOptionPane.showInputDialog("Nombre de la Cancion"),
-                            Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")),banda )
-            );
-            cant++;
-            op = JOptionPane.showInputDialog(
-                    "Desea continuar s/n");
-        }
-        adminBanda ap = new adminBanda("./banda.cbm");
-        ap.cargarArchivo();
-        ap.setBanda(s);
-        ap.escribirArchivo();
-            
+
+            String op = "s";
+            int cant = 1;
+            while (op.equals("s")) {
+                s.getCancion().add(
+                        new Cancion(
+                                JOptionPane.showInputDialog("Nombre de la Cancion"),
+                                Double.parseDouble(JOptionPane.showInputDialog("Tiempo en Segundos")), banda)
+                );
+                cant++;
+                op = JOptionPane.showInputDialog(
+                        "Desea continuar s/n");
+            }
+            adminBanda ap = new adminBanda("./banda.cbm");
+            ap.cargarArchivo();
+            ap.setBanda(s);
+            ap.escribirArchivo();
+
             JOptionPane.showMessageDialog(this,
-                 "Valores Ingresado Correctamente");
+                    "Valores Ingresado Correctamente");
             tnomuser2.setText("");
             tcontrasena2.setText("");
             tedadcliente.setText("");
             tgenmusical2.setText("");
             tnomBanda1.setText("");
             tnumerointegrante1.setText("");
-            
-             jd_AgregarBanda.setVisible(false);
-            
+
+            jd_AgregarBanda.setVisible(false);
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this,
-                 "Ocurrio un error y no se guardaron los datos");
+                    "Ocurrio un error y no se guardaron los datos");
         }
     }//GEN-LAST:event_btAgregarClienteMouseClicked
 
@@ -739,38 +740,40 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
-    jd_Login.pack();
-    jd_Login.setLocationRelativeTo(this);
-    jd_Login.setModal(true);
-    jd_Login.setVisible(true);
-        
+        jd_Login.pack();
+        jd_Login.setLocationRelativeTo(this);
+        jd_Login.setModal(true);
+        jd_Login.setVisible(true);
+
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void btIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btIngresarMouseClicked
         // TODO add your handling code here:
-        boolean bandera=false;
-        for(Usuario temp : usuarios){
+        boolean bandera = false;
+        for (Usuario temp : usuarios) {
             if (temp.getUsername().equals(tusuar.getText())
-                && temp.getPassword().equals(tcont.getText())
-            ){
+                    && temp.getPassword().equals(tcont.getText())) {
 
-                bandera= true;
+                bandera = true;
                 break;
             }
         }
 
-        if (bandera){
+        if (bandera) {
             tusuar.setText("");
             tcont.setText("");
             jButton1.setEnabled(false);
             verusuario.setEnabled(true);
+            agregarusuarioscliente.setEnabled(true);
+            agregarusuariosartistas.setEnabled(true);
+            eventoing.setEnabled(true);
+            Gen_Simulacion.setEnabled(true);
             salirusuario.setEnabled(true);
-            
 
             jd_Login.setVisible(false);
             jd_Ingresar.setVisible(false);
 
-        }else{
+        } else {
             JOptionPane.showMessageDialog(jd_Ingresar, "Usuario Equivocado");
         }
 
@@ -778,11 +781,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void btIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btIngresarKeyPressed
 
-        if (tcont.getText().length()>=0){
+        if (tcont.getText().length() >= 0) {
 
             btIngresar.setEnabled(true);
 
-        }else{
+        } else {
 
             btIngresar.setEnabled(false);
 
@@ -790,8 +793,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btIngresarKeyPressed
 
     private void tusuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tusuarMouseClicked
-        if(evt.getButton()==3){
-           // jPopupMenu2.show(jd_Ingresar, evt.getX(), evt.getY());
+        if (evt.getButton() == 3) {
+            // jPopupMenu2.show(jd_Ingresar, evt.getX(), evt.getY());
         }
 
         // TODO add your handling code here:
@@ -813,11 +816,11 @@ public class Principal extends javax.swing.JFrame {
     private void verusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verusuarioMouseClicked
         // TODO add your handling code here:
         jd_listaaruser.pack();
-    jd_listaaruser.setLocationRelativeTo(this);
-    jd_listaaruser.setModal(true);
-    jd_listaaruser.setVisible(true);
-        
-            
+        jd_listaaruser.setLocationRelativeTo(this);
+        jd_listaaruser.setModal(true);
+        jd_listaaruser.setVisible(true);
+
+
     }//GEN-LAST:event_verusuarioMouseClicked
 
     private void TablaUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaUsersMouseClicked
@@ -826,19 +829,19 @@ public class Principal extends javax.swing.JFrame {
 
     private void bteliminarusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bteliminarusuarioMouseClicked
         // TODO add your handling code here:
-          if (TablaUsers.getSelectedRow() >= 0) {
+        if (TablaUsers.getSelectedRow() >= 0) {
             DefaultTableModel modelo
                     = (DefaultTableModel) TablaUsers.getModel();
             modelo.removeRow(TablaUsers.getSelectedRow());
             TablaUsers.setModel(modelo);
             //tf_edad_maxima.setText(maxima_edad());
-             int selectedRow = TablaUsers.getSelectedRow();
-            
+            int selectedRow = TablaUsers.getSelectedRow();
+
             selectedRow = selectedRow + 1;
             usuarios.remove(selectedRow);
-            
+
         }
-        
+
     }//GEN-LAST:event_bteliminarusuarioMouseClicked
 
     private void verusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verusuarioActionPerformed
@@ -852,18 +855,15 @@ public class Principal extends javax.swing.JFrame {
                         "Nombre Usuario", "Contraseña"
                     }
             ));
-            
-                  
 
             // TODO add your handling code here:
             for (Usuario t : usuarios) {
                 Object[] row = {t.getUsername(), t.getPassword()};
                 DefaultTableModel modelo = (DefaultTableModel) TablaUsers.getModel();
                 modelo.addRow(row);
-             TablaUsers.setModel(modelo);
+                TablaUsers.setModel(modelo);
             }
-            
-            
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -872,7 +872,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void salirusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirusuarioMouseClicked
         // TODO add your handling code here:
-        
+        jButton1.setEnabled(true);
+        verusuario.setEnabled(false);
+        agregarusuarioscliente.setEnabled(false);
+        agregarusuariosartistas.setEnabled(false);
+        eventoing.setEnabled(false);
+        Gen_Simulacion.setEnabled(false);
+        salirusuario.setEnabled(false);
     }//GEN-LAST:event_salirusuarioMouseClicked
 
     private void eventoingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventoingMouseClicked
@@ -922,7 +928,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     ArrayList<Usuario> usuarios = new ArrayList();
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Gen_Simulacion;
     private javax.swing.JTable TablaUsers;
