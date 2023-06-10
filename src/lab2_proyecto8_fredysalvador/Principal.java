@@ -23,6 +23,8 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        Usuario usuario1 = new Usuario("enuila", "wynaut1325", 20);
+        usuarios.add(usuario1);
     }
 
     private void abrir_ingresar() {
@@ -86,6 +88,18 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaUsers = new javax.swing.JTable();
         bteliminarusuario = new javax.swing.JButton();
+        jd_AgregarEvento = new javax.swing.JDialog();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        fecha1 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        ciudad2 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        lugar2 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        capacidad2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jd_Simulacion = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
@@ -487,6 +501,95 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel16.setText("Agregar Evento");
+
+        jLabel18.setText("Fecha:");
+
+        jLabel21.setText("Ciudad:");
+
+        jLabel22.setText("Lugar:");
+
+        jLabel23.setText("Capacidad:");
+
+        jButton2.setText("Agregar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_AgregarEventoLayout = new javax.swing.GroupLayout(jd_AgregarEvento.getContentPane());
+        jd_AgregarEvento.getContentPane().setLayout(jd_AgregarEventoLayout);
+        jd_AgregarEventoLayout.setHorizontalGroup(
+            jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ciudad2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(lugar2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                                        .addComponent(jLabel18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(capacidad2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jd_AgregarEventoLayout.setVerticalGroup(
+            jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_AgregarEventoLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fecha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ciudad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addGap(18, 18, 18)
+                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lugar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addGroup(jd_AgregarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(capacidad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
+        javax.swing.GroupLayout jd_SimulacionLayout = new javax.swing.GroupLayout(jd_Simulacion.getContentPane());
+        jd_Simulacion.getContentPane().setLayout(jd_SimulacionLayout);
+        jd_SimulacionLayout.setHorizontalGroup(
+            jd_SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_SimulacionLayout.setVerticalGroup(
+            jd_SimulacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -526,6 +629,11 @@ public class Principal extends javax.swing.JFrame {
         agregarusuarioscliente.setFocusable(false);
         agregarusuarioscliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         agregarusuarioscliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        agregarusuarioscliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarusuariosclienteMouseClicked(evt);
+            }
+        });
         jToolBar1.add(agregarusuarioscliente);
 
         agregarusuariosartistas.setText("Agregar Banda");
@@ -533,6 +641,11 @@ public class Principal extends javax.swing.JFrame {
         agregarusuariosartistas.setFocusable(false);
         agregarusuariosartistas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         agregarusuariosartistas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        agregarusuariosartistas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarusuariosartistasMouseClicked(evt);
+            }
+        });
         jToolBar1.add(agregarusuariosartistas);
 
         eventoing.setText("Agregar Evento");
@@ -883,11 +996,96 @@ public class Principal extends javax.swing.JFrame {
 
     private void eventoingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventoingMouseClicked
         // TODO add your handling code here:
+        jd_AgregarEvento.pack();
+        jd_AgregarEvento.setLocationRelativeTo(this);
+        jd_AgregarEvento.setModal(true);
+        jd_AgregarEvento.setVisible(true);
     }//GEN-LAST:event_eventoingMouseClicked
 
     private void Gen_SimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Gen_SimulacionMouseClicked
         // TODO add your handling code here:
+         jd_Simulacion.pack();
+        jd_Simulacion.setLocationRelativeTo(this);
+        jd_Simulacion.setModal(true);
+        jd_Simulacion.setVisible(true);
     }//GEN-LAST:event_Gen_SimulacionMouseClicked
+
+    private void agregarusuariosclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarusuariosclienteMouseClicked
+        // TODO add your handling code here:
+        jd_AgregarSolista.pack();
+        jd_AgregarSolista.setLocationRelativeTo(this);
+        jd_AgregarSolista.setModal(true);
+        jd_AgregarSolista.setVisible(true);
+    }//GEN-LAST:event_agregarusuariosclienteMouseClicked
+
+    private void agregarusuariosartistasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarusuariosartistasMouseClicked
+        // TODO add your handling code here:
+        jd_AgregarBanda.pack();
+        jd_AgregarBanda.setLocationRelativeTo(this);
+        jd_AgregarBanda.setModal(true);
+        jd_AgregarBanda.setVisible(true);
+    }//GEN-LAST:event_agregarusuariosartistasMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+String fecha, ciudad, lugar;
+int capacidad;
+try {
+    fecha = fecha1.getText();
+    ciudad = ciudad2.getText();
+    lugar = lugar2.getText();
+    capacidad = Integer.parseInt(capacidad2.getText());
+
+    Eventos s = new Eventos(fecha, ciudad, lugar, capacidad);
+
+    String op = "s";
+    int cant = 1;
+    while (op.equals("s")) {
+        // Mostrar la lista de canciones disponibles
+        StringBuilder cancionesDisponibles = new StringBuilder("Canciones Disponibles:\n");
+        for (Usuario usuario : usuarios) {
+            if (usuario instanceof Bandas) {
+                Bandas banda = (Bandas) usuario;
+                List<Cancion> canciones = banda.getCancion();
+                for (Cancion cancion : canciones) {
+                    cancionesDisponibles.append("- ").append(cancion.getNombre()).append("\n");
+                }
+            } else if (usuario instanceof Solistas) {
+                Solistas solista = (Solistas) usuario;
+                List<Cancion> canciones = solista.getCancion();
+                for (Cancion cancion : canciones) {
+                    cancionesDisponibles.append("- ").append(cancion.getNombre()).append("\n");
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, cancionesDisponibles.toString(), "Lista de Canciones Disponibles", JOptionPane.PLAIN_MESSAGE);
+
+        // Resto del código para agregar canciones al evento...
+
+        cant++;
+        op = JOptionPane.showInputDialog("Desea continuar s/n");
+    }
+
+    eventos.add(s);
+
+    adminEvento ap = new adminEvento("./Eventos.cbm");
+    ap.cargarArchivo();
+    ap.setEvento(s);
+    ap.escribirArchivo();
+
+    JOptionPane.showMessageDialog(this, "Valores Ingresados Correctamente");
+    fecha1.setText("");
+    ciudad2.setText("");
+    lugar2.setText("");
+    capacidad2.setText("");
+
+    jd_AgregarEvento.setVisible(false);
+
+} catch (Exception e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Ocurrió un error y no se guardaron los datos");
+}
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -928,6 +1126,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     ArrayList<Usuario> usuarios = new ArrayList();
+    ArrayList<Eventos> eventos = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Gen_Simulacion;
@@ -938,8 +1137,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btAgregarCliente;
     private javax.swing.JButton btIngresar;
     private javax.swing.JButton bteliminarusuario;
+    private javax.swing.JTextField capacidad2;
+    private javax.swing.JTextField ciudad2;
     private javax.swing.JButton eventoing;
+    private javax.swing.JTextField fecha1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -950,10 +1153,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -966,10 +1174,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDialog jd_AgregarBanda;
+    private javax.swing.JDialog jd_AgregarEvento;
     private javax.swing.JDialog jd_AgregarSolista;
     private javax.swing.JDialog jd_Ingresar;
     private javax.swing.JDialog jd_Login;
+    private javax.swing.JDialog jd_Simulacion;
     private javax.swing.JDialog jd_listaaruser;
+    private javax.swing.JTextField lugar2;
     private javax.swing.JButton salirusuario;
     private javax.swing.JTextField tcont;
     private javax.swing.JTextField tcontrasena2;
