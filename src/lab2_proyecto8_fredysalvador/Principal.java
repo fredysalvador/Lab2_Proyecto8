@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JProgressBar;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -1004,10 +1006,79 @@ public class Principal extends javax.swing.JFrame {
 
     private void Gen_SimulacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Gen_SimulacionMouseClicked
         // TODO add your handling code here:
-         jd_Simulacion.pack();
+    /*     jd_Simulacion.pack();
         jd_Simulacion.setLocationRelativeTo(this);
         jd_Simulacion.setModal(true);
-        jd_Simulacion.setVisible(true);
+        jd_Simulacion.setVisible(true);*/
+      // Obtener el evento seleccionado
+      List<Eventos> listaEventos = eventos; // Obtener la lista completa de eventos
+
+    if (listaEventos.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "No hay eventos disponibles para la simulación.");
+        return;
+    }
+
+    // Crear un array de strings para mostrar los nombres de los eventos en el JOptionPane
+    String[] nombresEventos = new String[listaEventos.size()];
+    for (int i = 0; i < listaEventos.size(); i++) {
+        nombresEventos[i] = listaEventos.get(i).getCiudad(); // Suponiendo que cada evento tiene un atributo "nombre"
+    }
+
+    // Mostrar la lista de eventos en un JOptionPane y permitir al usuario seleccionar uno
+    String eventoSeleccionado = (String) JOptionPane.showInputDialog(null, "Seleccione un evento:", "Eventos",
+            JOptionPane.QUESTION_MESSAGE, null, nombresEventos, nombresEventos[0]);
+
+    // Buscar el evento seleccionado en la lista de eventos
+    Eventos eventoSimulacion = null;
+    for (Eventos evento : listaEventos) {
+        if (evento.getCiudad().equals(eventoSeleccionado)) { // Suponiendo que el atributo "nombre" es utilizado para comparar
+            eventoSimulacion = evento;
+            break;
+        }
+    }
+
+    if (eventoSimulacion != null) {
+        List<Cancion> cancionesEvento = eventoSimulacion.getCancion();
+
+        // Realizar la simulación de reproducción de canciones
+        for (Cancion cancion : cancionesEvento) {
+            int duracionSegundos = (int) cancion.getTimpo_duracion();
+
+            // Crear una ventana para mostrar la barra de progreso
+            JFrame frame = new JFrame("Simulación de Reproducción");
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            frame.setSize(300, 100);
+            frame.setLocationRelativeTo(null);
+
+            // Crear una barra de progreso
+            JProgressBar progressBar = new JProgressBar(0, duracionSegundos);
+            progressBar.setStringPainted(true);
+
+            // Agregar la barra de progreso al frame
+            frame.getContentPane().add(progressBar);
+
+            // Mostrar el frame
+            frame.setVisible(true);
+
+            // Simular la reproducción de la canción
+            for (int contador = 0; contador <= duracionSegundos; contador++) {
+                progressBar.setValue(contador);
+                progressBar.setString("Reproduciendo: " + cancion.getNombre() + " - Tiempo: " + contador + " segundos");
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // Cerrar la ventana al finalizar la reproducción de la canción
+            frame.dispose();
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "No se ha seleccionado ningún evento para la simulación.");
+    }
+    
     }//GEN-LAST:event_Gen_SimulacionMouseClicked
 
     private void agregarusuariosclienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarusuariosclienteMouseClicked
@@ -1038,9 +1109,9 @@ try {
 
     Eventos s = new Eventos(fecha, ciudad, lugar, capacidad);
 
-    String op = "s";
-    int cant = 1;
-    while (op.equals("s")) {
+   // String op = "s";
+   // int cant = 1;
+    //while (op.equals("s")) {
         // Mostrar la lista de canciones disponibles
         StringBuilder cancionesDisponibles = new StringBuilder("Canciones Disponibles:\n");
         for (Usuario usuario : usuarios) {
@@ -1062,9 +1133,9 @@ try {
 
         // Resto del código para agregar canciones al evento...
 
-        cant++;
-        op = JOptionPane.showInputDialog("Desea continuar s/n");
-    }
+     //   cant++;
+    //    op = JOptionPane.showInputDialog("Desea continuar s/n");
+   // }
 
     eventos.add(s);
 
